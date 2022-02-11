@@ -11,14 +11,10 @@ const App = () => {
   const [weatherDetails, getWeatherDetails] = useState("");
 
   // const appId = process.env.APP_ID;
-  console.log(process.env.REACT_APP_API_KEY);
-  console.log(weatherDetails);
+  // console.log(process.env.REACT_APP_API_KEY);
+  // console.log(weatherDetails);
 
   const url = "https://api.openweathermap.org/data/2.5/forecast";
-
-  useEffect(() => {
-    getAllWeatherDetails();
-  }, []);
 
   const getLocation = () => {
     if (!navigator.geolocation) {
@@ -38,13 +34,22 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    getLocation();
+    getAllWeatherDetails();
+  }, []);
+
   const getAllWeatherDetails = () => {
+    // getLocation()
+    console.log(lat);
+    // console.log(lng);
+
     axios
       .get(`${url}`, {
         // crossdomain: true,
         params: {
-          lat: 22.6479701,
-          lon: 88.430686,
+          lat: lat,
+          lon: lng,
           appid: process.env.REACT_APP_API_KEY,
         },
       })
@@ -63,7 +68,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Forecast weatherDetails={weatherDetails} />
+      {/* <Forecast weatherDetails={weatherDetails} /> */}
     </div>
   );
 };
