@@ -39,7 +39,7 @@ const App = () => {
         params: {
           lat: 22.6479701,
           lon: 88.430686,
-          appid: "%env(APP_ID)%",
+          appid: process.env.REACT_APP_API_KEY,
         },
       })
       .then((response) => {
