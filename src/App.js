@@ -12,6 +12,7 @@ const App = () => {
 
   // const appId = process.env.APP_ID;
   console.log(process.env.REACT_APP_API_KEY);
+  console.log(weatherDetails);
 
   const url = "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -62,7 +63,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Forecast />
+      <Forecast weatherDetails={weatherDetails} />
     </div>
   );
 };

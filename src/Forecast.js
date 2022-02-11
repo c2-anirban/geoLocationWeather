@@ -7,7 +7,7 @@ import {
   TiWeatherDownpour,
 } from "react-icons/ti";
 
-const Forecast = () => {
+const Forecast = ({ weatherDetails }) => {
   return (
     <div>
       <div className="jumbotron jumbotron-fluid bg-light mb-5 mt-4">
@@ -22,14 +22,16 @@ const Forecast = () => {
           <div className="card-body">
             <h5 className="card-title">Friday</h5>
             <p className="card-text">
-              <small className="text-muted">March 1st, 1:00 pm </small>
+              <small className="text-muted">{weatherDetails[0].dt_txt}</small>
             </p>
             <h2 className="">
               <TiWeatherStormy />
             </h2>
             <h3>35°F</h3>
             <p className="card-text">
-              <small className="text-dark">Clear Sky </small>
+              <small className="text-dark">
+                {weatherDetails[0].weather[0].description}
+              </small>
             </p>
           </div>
         </div>
@@ -37,14 +39,17 @@ const Forecast = () => {
           <div className="card-body">
             <h5 className="card-title">Saturday</h5>
             <p className="card-text">
-              <small className="text-muted">March 2nd, 1:00 pm</small>
+              <small className="text-muted">{weatherDetails[8].dt_txt}</small>
             </p>
             <h2 className="">
               <TiWeatherPartlySunny />
             </h2>
             <h3>35°F</h3>
             <p className="card-text">
-              <small className="text-dark">Light Rain</small>
+              <small className="text-dark">
+                {" "}
+                {weatherDetails[8].weather[0].description}
+              </small>
             </p>
           </div>
         </div>
@@ -52,14 +57,17 @@ const Forecast = () => {
           <div className="card-body">
             <h5 className="card-title">Sunday</h5>
             <p className="card-text">
-              <small className="text-muted">March 3rd, 1:00 pm</small>
+              <small className="text-muted">{weatherDetails[16].dt_txt}</small>
             </p>
             <h2 className="">
               <TiWeatherShower />
             </h2>
             <h3>35°F</h3>
             <p className="card-text">
-              <small className="text-dark">Broken Clouds </small>
+              <small className="text-dark">
+                {" "}
+                {weatherDetails[16].weather[0].description}
+              </small>
             </p>
           </div>
         </div>
@@ -67,14 +75,17 @@ const Forecast = () => {
           <div className="card-body">
             <h5 className="card-title">Monday</h5>
             <p className="card-text">
-              <small className="text-muted">March 4th, 1:00 pm</small>
+              <small className="text-muted">{weatherDetails[24].dt_txt}</small>
             </p>
             <h2 className="">
               <TiWeatherCloudy />
             </h2>
             <h3>35°F</h3>
             <p className="card-text">
-              <small className="text-dark">Clear Sky</small>
+              <small className="text-dark">
+                {" "}
+                {weatherDetails[24].weather[0].description}
+              </small>
             </p>
           </div>
         </div>
@@ -82,14 +93,17 @@ const Forecast = () => {
           <div className="card-body">
             <h5 className="card-title">Tuesday</h5>
             <p className="card-text">
-              <small className="text-muted">March 5th, 1:00 pm</small>
+              <small className="text-muted">{weatherDetails[32].dt_txt}</small>
             </p>
             <h2 className="">
               <TiWeatherDownpour />
             </h2>
             <h3>35°F</h3>
             <p className="card-text">
-              <small className="text-dark">Scattered Clouds </small>
+              <small className="text-dark">
+                {" "}
+                {weatherDetails[32].weather[0].description}
+              </small>
             </p>
           </div>
         </div>
