@@ -1,5 +1,8 @@
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Forecast from "./Forecast";
+// import env from "react-dotenv";
 
 const App = () => {
   const [lat, setLat] = useState(null);
@@ -8,6 +11,7 @@ const App = () => {
   const [weatherDetails, getWeatherDetails] = useState("");
 
   // const appId = process.env.APP_ID;
+  console.log(process.env.REACT_APP_API_KEY);
 
   const url = "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -36,10 +40,11 @@ const App = () => {
   const getAllWeatherDetails = () => {
     axios
       .get(`${url}`, {
+        // crossdomain: true,
         params: {
           lat: 22.6479701,
           lon: 88.430686,
-          appid: "%env(APP_ID)%",
+          appid: process.env.REACT_APP_API_KEY,
         },
       })
       .then((response) => {
@@ -57,11 +62,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <button onClick={getLocation}>Get Location</button>
-      <h1>Coordinates</h1>
-      <p>{status}</p>
-      {lat && <p>Latitude: {lat}</p>}
-      {lng && <p>Longitude: {lng}</p>}
+      <Forecast />
     </div>
   );
 };

@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.card-body {
+  margin: 2em 1em 2em 1em;
+  /* padding: 2px 2px 2px 2px; */
+}
+.card.col-md-2 {
+  margin: 10px 15px 10px 15px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
