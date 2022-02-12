@@ -11,8 +11,6 @@ const App = () => {
 
   const url = "https://api.openweathermap.org/data/2.5/forecast";
 
-  console.log(status);
-
   const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus("Geolocation is not supported by your browser");
@@ -58,7 +56,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Forecast weatherDetails={weatherDetails} />
+      {status && <h1>{status}</h1>}
+      {weatherDetails && <Forecast weatherDetails={weatherDetails} />}
     </div>
   );
 };

@@ -8,10 +8,6 @@ import {
 } from "react-icons/ti";
 
 const Forecast = ({ weatherDetails }) => {
-  //   console.log(weatherDetails);
-  if (weatherDetails === "") {
-    return <p>loading...</p>;
-  }
   return (
     <div>
       <div className="jumbotron jumbotron-fluid bg-light mb-5 mt-4">
