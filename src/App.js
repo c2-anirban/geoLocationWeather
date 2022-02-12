@@ -1,5 +1,7 @@
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Forecast from "./Forecast";
 
 const App = () => {
   const [lat, setLat] = useState(null);
@@ -7,13 +9,9 @@ const App = () => {
   const [status, setStatus] = useState(null);
   const [weatherDetails, getWeatherDetails] = useState("");
 
-  // const appId = process.env.APP_ID;
-
   const url = "https://api.openweathermap.org/data/2.5/forecast";
 
-  useEffect(() => {
-    getAllWeatherDetails();
-  }, []);
+  console.log(status);
 
   const getLocation = () => {
     if (!navigator.geolocation) {
@@ -32,13 +30,22 @@ const App = () => {
       );
     }
   };
+  useEffect(() => {
+    void getLocation();
+  }, []);
 
-  const getAllWeatherDetails = () => {
+  useEffect(() => {
+    if (lat !== null && lng !== null) {
+      getAllWeatherDetails(lat, lng);
+    }
+  }, [lat, lng]);
+
+  const getAllWeatherDetails = (latitude, longitude) => {
     axios
       .get(`${url}`, {
         params: {
-          lat: 22.6479701,
-          lon: 88.430686,
+          lat: latitude,
+          lon: longitude,
           appid: process.env.REACT_APP_API_KEY,
         },
       })
@@ -48,20 +55,10 @@ const App = () => {
         getWeatherDetails(allWeatherDetails);
       });
   };
-  // getLocation();
-
-  // useEffect(() => {
-  //   if (!lat || !lng) return;
-  //   getAllWeatherDetails();
-  // }, [lat, lng]);
 
   return (
     <div className="App">
-      <button onClick={getLocation}>Get Location</button>
-      <h1>Coordinates</h1>
-      <p>{status}</p>
-      {lat && <p>Latitude: {lat}</p>}
-      {lng && <p>Longitude: {lng}</p>}
+      <Forecast weatherDetails={weatherDetails} />
     </div>
   );
 };
