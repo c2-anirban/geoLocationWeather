@@ -48,7 +48,7 @@ const App = () => {
         },
       })
       .then((response) => {
-        const allWeatherDetails = response.data.list;
+        const allWeatherDetails = response.data;
         console.log(allWeatherDetails);
         getWeatherDetails(allWeatherDetails);
       });
