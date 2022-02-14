@@ -29,7 +29,7 @@
 }
 
 .card-body {
-  margin: 2em 1em 2em 1em;
+  margin: 1em 1em 1em 1em;
   /* padding: 2px 2px 2px 2px; */
 }
 .card.col-md-2 {
@@ -43,4 +43,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+* {
+  color: rgb(7, 1, 1);
+  background: rgb(161, 217, 230);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icons {
+  display: inline-bock;
+  float: left;
+  height: 200px;
+  width: 190px;
+  margin: 20px;
+  border: 5px solid rgb(48, 47, 47);
+  border-radius: 10px;
+}
+
+.image {
+  height: 140px;
+  width: 100%;
+}
+
+.imgClass {
+  height: 140px;
+  width: 100%;
+}
+
+.weather {
+  margin: 5px;
+  /*  background-color: rgb(106, 215, 255); */
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.minValues {
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  height: 25px;
+  width: 85px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.maxValues {
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  height: 25px;
+  width: 85px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
