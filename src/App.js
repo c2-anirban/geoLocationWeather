@@ -42,8 +42,8 @@ const App = () => {
         axios
           .get("https://api.openweathermap.org/data/2.5/onecall", {
             params: {
-              lat,
-              lon: lng,
+              lat: latitude,
+              lon: longitude,
               appid: process.env.REACT_APP_API_KEY,
             },
           })

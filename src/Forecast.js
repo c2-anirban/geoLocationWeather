@@ -19,7 +19,6 @@ const weekday = [
 ];
 
 const Forecast = ({ weatherDetails }) => {
-  console.log(weatherDetails);
   function CheckDay(day) {
     const date = new Date(day);
     return weekday[date.getDay()];
