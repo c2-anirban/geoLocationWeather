@@ -94,7 +94,7 @@ const Forecast = ({ weatherDetails }) => {
               </small>
             </p>
             <p className="card-text">
-              <strong className="text-dark text-bold">
+              <strong className="text-dark text-capitalize">
                 {weatherDetails.list[0].weather[0].description}
               </strong>
             </p>
@@ -149,7 +149,7 @@ const Forecast = ({ weatherDetails }) => {
               </small>
             </p>
             <p className="card-text">
-              <strong className="text-dark">
+              <strong className="text-dark text-capitalize">
                 {" "}
                 {weatherDetails.list[8].weather[0].description}
               </strong>
@@ -207,7 +207,7 @@ const Forecast = ({ weatherDetails }) => {
               </small>
             </p>
             <p className="card-text">
-              <strong className="text-dark">
+              <strong className="text-dark text-capitalize">
                 {" "}
                 {weatherDetails.list[16].weather[0].description}
               </strong>
@@ -265,7 +265,7 @@ const Forecast = ({ weatherDetails }) => {
               </small>
             </p>
             <p className="card-text">
-              <strong className="text-dark">
+              <strong className="text-dark text-capitalize">
                 {" "}
                 {weatherDetails.list[24].weather[0].description}
               </strong>
@@ -294,8 +294,8 @@ const Forecast = ({ weatherDetails }) => {
             </p>
             <h2 className="">
               <img
-                src={`http://openweathermap.org/img/wn/${weatherDetails.list[32].weather[0].icon}.png`}
-                alt="img"
+                src={`http://openweathermap.org/img/w/${weatherDetails.list[32].weather[0].icon}.png`}
+                alt="wthr img"
               />
 
               {/* <TiWeatherDownpour /> */}
@@ -323,7 +323,7 @@ const Forecast = ({ weatherDetails }) => {
               </small>
             </p>
             <p className="card-text">
-              <strong className="text-dark">
+              <strong className="text-dark text-capitalize">
                 {" "}
                 {weatherDetails.list[32].weather[0].description}
               </strong>
