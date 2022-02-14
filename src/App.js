@@ -28,15 +28,6 @@ const App = () => {
       );
     }
   };
-  useEffect(() => {
-    void getLocation();
-  }, []);
-
-  useEffect(() => {
-    if (lat !== null && lng !== null) {
-      getAllWeatherDetails(lat, lng);
-    }
-  }, [lat, lng]);
 
   const getAllWeatherDetails = (latitude, longitude) => {
     axios
@@ -47,12 +38,34 @@ const App = () => {
           appid: process.env.REACT_APP_API_KEY,
         },
       })
-      .then((response) => {
-        const allWeatherDetails = response.data;
-        console.log(allWeatherDetails);
-        getWeatherDetails(allWeatherDetails);
+      .then((res) => {
+        axios
+          .get("https://api.openweathermap.org/data/2.5/onecall", {
+            params: {
+              lat,
+              lon: lng,
+              appid: process.env.REACT_APP_API_KEY,
+            },
+          })
+          .then((response) => {
+            const allWeatherDetails = response.data;
+            getWeatherDetails({
+              ...res.data,
+              list: allWeatherDetails.daily,
+            });
+          });
       });
   };
+
+  useEffect(() => {
+    void getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (lat !== null && lng !== null) {
+      getAllWeatherDetails(lat, lng);
+    }
+  }, [lat, lng]);
 
   return (
     <div className="App">
