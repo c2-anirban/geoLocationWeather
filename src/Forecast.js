@@ -52,14 +52,12 @@ const Forecast = ({ weatherDetails }) => {
               </p>
               <p className="card-text">
                 <small className="">
-                  Sunrise :{" "}
-                  {new Date(weatherDetails.city.sunrise).toLocaleTimeString()}
+                  Sunrise : {new Date(el.sunrise).toLocaleTimeString()}
                 </small>
               </p>
               <p className="card-text">
                 <small className="text-muted">
-                  Sunset :{" "}
-                  {new Date(weatherDetails.city.sunset).toLocaleTimeString()}
+                  Sunset : {new Date(el.sunset).toLocaleTimeString()}
                 </small>
               </p>
               <h2 className="">
@@ -70,16 +68,16 @@ const Forecast = ({ weatherDetails }) => {
 
                 {/* <TiWeatherStormy /> */}
               </h2>
-              <h3>{(el.temp.day - 273.15).toFixed(2)} °C</h3>
+              <h3>{(el.temp.day - 273.15).toFixed(2)}°C</h3>
               <p className="minValues" id="day2Min">
-                {(el.temp.min - 273.15).toFixed(2)} °C
+                {(el.temp.min - 273.15).toFixed(2)}°C
               </p>
               <p className="maxValues" id="day2Max">
-                {(el.temp.max - 273.15).toFixed(2)} °C
+                {(el.temp.max - 273.15).toFixed(2)}°C
               </p>
               <p className="card-text">
                 <small className="text-muted">
-                  Feels Like : {(el.feels_like.day - 273.15).toFixed(2)} °C
+                  Feels Like : {(el.feels_like.day - 273.15).toFixed(2)}°C
                 </small>
               </p>
               <p className="card-text">

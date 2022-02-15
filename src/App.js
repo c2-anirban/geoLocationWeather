@@ -39,6 +39,7 @@ const App = () => {
         },
       })
       .then((res) => {
+        console.log(res.data);
         axios
           .get("https://api.openweathermap.org/data/2.5/onecall", {
             params: {
@@ -48,6 +49,7 @@ const App = () => {
             },
           })
           .then((response) => {
+            console.log(response.data);
             const allWeatherDetails = response.data;
             getWeatherDetails({
               ...res.data,
